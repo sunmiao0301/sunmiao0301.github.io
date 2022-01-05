@@ -11,34 +11,34 @@
   <meta charset="utf-8">
 
   
-  <title>All Posts - John Doe</title>
+  <title>Store a large flie with Git LFS</title>
   
-  <link rel="canonical" href="http://example.com/archives/2022/01/">
+  <link rel="canonical" href="http://example.com/2021/11/13/Store-a-large-flie-with-Git-LFS/">
   
-  <meta name="description" content="">
+  <meta name="description" content="Download and Install the Git Large File Storagegit-lfs Set up Git LFS for your user account in your git bash by running:$ cd d:/repo/BackEndDeveloper ">
   
   
   <meta name="author" content="John Doe">
   
-  <meta property="og:image" content="http://example.com/images/thumbnail.jpg">
+  <meta property="og:image" content="http://example.comundefined">
   
   <meta property="og:site_name" content="Hexo" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="All Posts - John Doe" />
+  <meta property="og:title" content="Store a large flie with Git LFS" />
   
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Download and Install the Git Large File Storagegit-lfs Set up Git LFS for your user account in your git bash by running:$ cd d:/repo/BackEndDeveloper ">
   
-  <meta property="og:url" content="http://example.com/archives/2022/01/" />
+  <meta property="og:url" content="http://example.com/2021/11/13/Store-a-large-flie-with-Git-LFS/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="All Posts - John Doe">
+  <meta name="twitter:title" content="Store a large flie with Git LFS">
   
-  <meta name="twitter:description" content="">
+  <meta name="twitter:description" content="Download and Install the Git Large File Storagegit-lfs Set up Git LFS for your user account in your git bash by running:$ cd d:/repo/BackEndDeveloper ">
   
   
-  <meta name="twitter:image" content="http://example.com/images/thumbnail.jpg">
+  <meta name="twitter:image" content="http://example.comundefined">
   
-  <meta name="twitter:url" content="http://example.com/archives/2022/01/" />
+  <meta name="twitter:url" content="http://example.com/2021/11/13/Store-a-large-flie-with-Git-LFS/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -189,32 +189,27 @@
 </div>
 
         <div class="trans">
-          
-<h2>All Posts</h2>
+            <h2>Store a large flie with Git LFS</h2>
 
+  <h3 id="Download-and-Install-the-Git-Large-File-Storage"><a href="#Download-and-Install-the-Git-Large-File-Storage" class="headerlink" title="Download and Install the Git Large File Storage"></a>Download and Install the Git Large File Storage</h3><p><a target="_blank" rel="noopener" href="https://git-lfs.github.com/">git-lfs</a></p>
+<h3 id="Set-up-Git-LFS-for-your-user-account-in-your-git-bash-by-running"><a href="#Set-up-Git-LFS-for-your-user-account-in-your-git-bash-by-running" class="headerlink" title="Set up Git LFS for your user account in your git bash by running:"></a>Set up Git LFS for your user account in your git bash by running:</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> d:/repo/BackEndDeveloper
+$ <span class="token function">git</span> lfs <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="In-the-Git-repository-where-you-want-to-use-Git-LFS-select-the-file-types-you’d-like-Git-LFS-to-manage-or-directly-edit-your-gitattributes"><a href="#In-the-Git-repository-where-you-want-to-use-Git-LFS-select-the-file-types-you’d-like-Git-LFS-to-manage-or-directly-edit-your-gitattributes" class="headerlink" title="In the Git repository where you want to use Git LFS, select the file types you’d like Git LFS to manage (or directly edit your .gitattributes)."></a>In the Git repository where you want to use Git LFS, select the file types you’d like Git LFS to manage (or directly edit your .gitattributes).</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> d:/repo/BackEndDeveloper
+$ <span class="token function">git</span> lfs track <span class="token string">"*.pdf"</span> <span class="token comment"># I wanne upload pdf file</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="Now-make-sure-gitattributes-is-tracked"><a href="#Now-make-sure-gitattributes-is-tracked" class="headerlink" title="Now make sure .gitattributes is tracked"></a>Now make sure .gitattributes is tracked</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> status
+<span class="token comment"># Untracked files:</span>
+  <span class="token punctuation">(</span>use <span class="token string">"git add &lt;file>..."</span> to include <span class="token keyword">in</span> what will be committed<span class="token punctuation">)</span>
+        .gitattributes
+$ <span class="token function">git</span> <span class="token function">add</span> .gitattributes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="To-avoid-some-errors-commit-gitattributes-first"><a href="#To-avoid-some-errors-commit-gitattributes-first" class="headerlink" title="To avoid some errors, commit gitattributes first"></a>To avoid some errors, commit gitattributes first</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> commit -m <span class="token string">"first for gitattributes"</span>
+$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="Now-just-commit-and-push-to-GitHub-as-you-normally-would"><a href="#Now-just-commit-and-push-to-GitHub-as-you-normally-would" class="headerlink" title="Now, just commit and push to GitHub as you normally would"></a>Now, just commit and push to GitHub as you normally would</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">add</span> D:/repo/BackEndDeveloper/02ComputerNetwork/Computer-Network-A-Top-Down-Approach/计算机网络自顶向下方法原书第7版.pdf
+$ <span class="token function">git</span> commit -m <span class="token string">"push large file"</span>
+$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Done</p>
 
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Jan 5, 2022</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/01/05/another-device/" class="">
-            
-              another device
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-<div class="pagination-bar">
-  <ul class="pagination">
-    
-    
-  </ul>
-</div>
+  <p> — Nov 13, 2021</p>
+  
 
 
           <div class="row mt-2">

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Minima -->
+  <!-- Hexo theme created by @adisaktijrs -->
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+
+  
+  <title>Deploying a GitHub Pages site in windows</title>
+  
+  <link rel="canonical" href="http://example.com/2021/11/12/Deploy-your-GitHub-Pages/">
+  
+  <meta name="description" content="Quote by Linus Torvalds: “Talk is cheap. Show me the code.” Install git and node.js by yourselfgit node.js Something that should be done first  with g">
+  
+  
+  <meta name="author" content="John Doe">
+  
+  <meta property="og:image" content="http://example.comundefined">
+  
+  <meta property="og:site_name" content="Hexo" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Deploying a GitHub Pages site in windows" />
+  
+  <meta property="og:description" content="Quote by Linus Torvalds: “Talk is cheap. Show me the code.” Install git and node.js by yourselfgit node.js Something that should be done first  with g">
+  
+  <meta property="og:url" content="http://example.com/2021/11/12/Deploy-your-GitHub-Pages/" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Deploying a GitHub Pages site in windows">
+  
+  <meta name="twitter:description" content="Quote by Linus Torvalds: “Talk is cheap. Show me the code.” Install git and node.js by yourselfgit node.js Something that should be done first  with g">
+  
+  
+  <meta name="twitter:image" content="http://example.comundefined">
+  
+  <meta name="twitter:url" content="http://example.com/2021/11/12/Deploy-your-GitHub-Pages/" />
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload fonts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+<link rel="stylesheet" href="/css/normalize.css">
+
+  
+<link rel="stylesheet" href="/css/skeleton.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+<link rel="stylesheet" href="/css/prism-dark.css">
+
+  
+<link rel="stylesheet" href="/css/prism-line-numbers.css">
+
+  <!-- User css -->
+  
+  
+<link rel="stylesheet" href="/css/user.css">
+
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Custom Theme Color Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <style>
+  a:not(.icon) {
+    text-decoration-color: #0FA0CE;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #0FA0CE 50%
+    );
+  }
+  blockquote {
+    border-left: 8px solid #0FA0CE;
+  }
+  .nanobar .bar {
+    background: #0FA0CE;
+  }
+  .button.button-primary:hover,
+  button.button-primary:hover,
+  input[type="submit"].button-primary:hover,
+  input[type="reset"].button-primary:hover,
+  input[type="button"].button-primary:hover,
+  .button.button-primary:focus,
+  button.button-primary:focus,
+  input[type="submit"].button-primary:focus,
+  input[type="reset"].button-primary:focus,
+  input[type="button"].button-primary:focus {
+    background-color: #0FA0CE;
+    border-color: #0FA0CE;
+  }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+    border: 1px solid #0FA0CE;
+  }
+</style>
+
+  <!-- Google Analytics (With Privacy Settings On)
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div>
+
+        <div class="row">
+  <div class="two columns" style="max-width: 50px">
+    <h1 class="mt-2 mode">
+      <div onclick=setDarkMode(true) id="darkBtn">☀️</div>
+      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>🌑</div>
+      <script >
+        if (localStorage.getItem('preferredTheme') == 'dark') {
+          setDarkMode(true)
+        }
+        function setDarkMode(isDark) {
+          var darkBtn = document.getElementById('darkBtn')
+          var lightBtn = document.getElementById('lightBtn')
+          if (isDark) {
+            lightBtn.style.display = "block"
+            darkBtn.style.display = "none"
+            localStorage.setItem('preferredTheme', 'dark');
+          } else {
+            lightBtn.style.display = "none"
+            darkBtn.style.display = "block"
+            localStorage.removeItem('preferredTheme');
+          }
+          document.body.classList.toggle("darkmode");
+        }
+      </script>
+    </h1>
+  </div>
+
+  <div class="six columns ml-1">
+    <h1 class="mt-2">
+      Hi, I am Miao.
+    </h1>
+  </div>
+
+  <div class="twelve columns">
+    <div class="row">
+      <div class="nine columns left">
+        <a href="/">Home</a>
+        
+          
+          <a href="/Works" class="ml">Works</a>
+          
+        
+          
+          <a href="/About" class="ml">About</a>
+          
+        
+        
+          
+            <a href="mailto:hfut_sm@163.com" target="_blank" class="ml">Email</a>
+          
+        
+      </div>
+    </div>
+    <hr style="margin-bottom: 2.6rem">
+  </div>
+</div>
+
+        <div class="trans">
+            <h2>Deploying a GitHub Pages site in windows</h2>
+
+  <p>Quote by Linus Torvalds: “Talk is cheap. Show me the code.”</p>
+<h3 id="Install-git-and-node-js-by-yourself"><a href="#Install-git-and-node-js-by-yourself" class="headerlink" title="Install git and node.js by yourself"></a>Install git and node.js by yourself</h3><p><a target="_blank" rel="noopener" href="https://git-scm.com/download/win">git</a></p>
+<p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">node.js</a></p>
+<h3 id="Something-that-should-be-done-first-with-git"><a href="#Something-that-should-be-done-first-with-git" class="headerlink" title="Something that should be done first  with git"></a>Something that should be done first  with git</h3><ul>
+<li>Open Git Bash and configure your identity<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> config --global user.name <span class="token string">"sunmiao0301"</span>
+$ <span class="token function">git</span> confit --global user.email <span class="token string">"hfut_sm@163.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>Check with cmd below<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> config --global user.name
+sunmiao0301
+$ <span class="token function">git</span> confit --global user.email
+hfut_sm@163.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>Create your repo for GitHub Pages<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> d:
+$ <span class="token function">mkdir</span> repo
+$ <span class="token builtin class-name">cd</span> repo
+$ <span class="token function">git</span> init<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>Check your installation of node.js with cmd below (Reboot your PC if there is sth wrong in this step)<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ node -v
+v16.13.1
+$ <span class="token function">npm</span> -v
+<span class="token number">8.1</span>.2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Open-up-the-terminal-and-run"><a href="#Open-up-the-terminal-and-run" class="headerlink" title="Open up the terminal and run"></a>Open up the terminal and run</h3></li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> ~/.ssh <span class="token operator">&amp;&amp;</span> ssh-keygen
+$ <span class="token function">cat</span> id_rsa.pub <span class="token operator">|</span> clip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="Add-your-key-to-your-account-via-github-com"><a href="#Add-your-key-to-your-account-via-github-com" class="headerlink" title="Add your key to your account via github.com"></a>Add your key to your account via github.com</h3><ul>
+<li>Enter <a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a> </li>
+<li>New a SSH Key, key is in your clipboard now, just paste it.</li>
+<li>Check the key setting with cmd below<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">ssh</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="install-Hexo-and-initial-your-first-blog-in-localhost"><a href="#install-Hexo-and-initial-your-first-blog-in-localhost" class="headerlink" title="install Hexo and initial your first blog in localhost"></a>install Hexo and initial your first blog in localhost</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> d:/repo
+$ <span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
+$ hexo init sunmiao0301.github.io
+$ <span class="token builtin class-name">cd</span> sunmiao0301.github.io
+$ hexo g
+$ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>Enter <a href="localhost:4000">localhost:4000</a> in your browser</li>
+</ul>
+<h3 id="deploy-your-first-blog-to-GitHub-Pages"><a href="#deploy-your-first-blog-to-GitHub-Pages" class="headerlink" title="deploy your first blog to GitHub Pages"></a>deploy your first blog to GitHub Pages</h3><ul>
+<li>Open the file in:&amp;emspD:\repo\sunmiao0301.github.io_config.yml (the path for me)</li>
+<li>At the end of this file, replace the deployment with:<br><code>deploy: type:&amp;emspgit repo:&amp;emsphttps://github.com/sunmiao0301/sunmiao0301.github.io.git branch:&amp;emspmain</code></li>
+<li>Save and check with:<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> d:/repo/sunsunmiao0301.github.io
+$ <span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
+$ hexo clean
+$ hexo g
+$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Change-your-theme-if-you-like"><a href="#Change-your-theme-if-you-like" class="headerlink" title="Change your theme if you like"></a>Change your theme if you like</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> d:/repo/sunsunmiao0301.github.io
+$ <span class="token function">git</span> clone https://github.com/tiaanduplessis/hexo-theme-brewski.git themes/brewski
+$ <span class="token function">npm</span> <span class="token function">install</span> --save hexo-renderer-pug hexo-generator-feed hexo-generator-sitemap<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>Edit the extensions in your file (path is D:\repo\sunmiao0301.github.io_config.yml for me)<br><code>theme:&amp;emspbrewski</code></li>
+</ul>
+<h3 id="Last-step"><a href="#Last-step" class="headerlink" title="Last step"></a>Last step</h3><ul>
+<li>Delete the folder:&amp;emspD:\repo\sunmiao0301.github.io.deploy_git, then:<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo clean
+$ hexo g
+$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+
+  <p> — Nov 12, 2021</p>
+  
+
+
+          <div class="row mt-2">
+  
+    <div class="eight columns">
+      <p id="madewith">Made with ❤ and
+        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
+        <svg class="hexo svg-hov" width="14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Hexo.js</title><path d="M12 .007L1.57 6.056V18.05L12 23.995l10.43-6.049V5.952L12 .007zm4.798 17.105l-.939.521-.939-.521V12.94H9.08v4.172l-.94.521-.938-.521V6.89l.939-.521.939.521v4.172h5.84V6.89l.94-.521.938.521v10.222z"/></svg>
+        </a>
+        
+    </div>
+
+    <!-- Sepcial thanks to https://simpleicons.org/ for the icons -->
+    <div class="four columns mb-3 posisi" >
+      
+      <a class="ml-0 footer-link icon" href="https://github.com/sunmiao0301" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
+        <svg class="github svg-hov" width="18" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      
+
+      
+
+      
+
+      
+
+      
+
+    </div>
+  
+</div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="/js/nanobar.min.js"></script>
+  <script>
+    var options = {
+      classname: 'nanobar',
+      id: 'myNanobar'
+    };
+    var nanobar = new Nanobar(options);
+    nanobar.go(30);
+    nanobar.go(76);
+    nanobar.go(100);
+  </script>
+
+</body>
+
+</html>
