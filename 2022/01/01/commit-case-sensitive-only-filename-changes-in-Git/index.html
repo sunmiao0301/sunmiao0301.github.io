@@ -11,34 +11,34 @@
   <meta charset="utf-8">
 
   
-  <title>All Posts - John Doe</title>
+  <title>commit case-sensitive only filename changes in Git</title>
   
-  <link rel="canonical" href="http://example.com/archives/">
+  <link rel="canonical" href="http://example.com/2022/01/01/commit-case-sensitive-only-filename-changes-in-Git/">
   
-  <meta name="description" content="">
+  <meta name="description" content="How do I commit case-sensitive only filename changes in Git?/d/repo/MIT-6.0001-Introduction-to-Computer-Science-and-Programming-in-Python (main) $ git">
   
   
   <meta name="author" content="John Doe">
   
-  <meta property="og:image" content="http://example.com/images/thumbnail.jpg">
+  <meta property="og:image" content="http://example.comundefined">
   
   <meta property="og:site_name" content="Hexo" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="All Posts - John Doe" />
+  <meta property="og:title" content="commit case-sensitive only filename changes in Git" />
   
-  <meta property="og:description" content="">
+  <meta property="og:description" content="How do I commit case-sensitive only filename changes in Git?/d/repo/MIT-6.0001-Introduction-to-Computer-Science-and-Programming-in-Python (main) $ git">
   
-  <meta property="og:url" content="http://example.com/archives/" />
+  <meta property="og:url" content="http://example.com/2022/01/01/commit-case-sensitive-only-filename-changes-in-Git/" />
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="All Posts - John Doe">
+  <meta name="twitter:title" content="commit case-sensitive only filename changes in Git">
   
-  <meta name="twitter:description" content="">
+  <meta name="twitter:description" content="How do I commit case-sensitive only filename changes in Git?/d/repo/MIT-6.0001-Introduction-to-Computer-Science-and-Programming-in-Python (main) $ git">
   
   
-  <meta name="twitter:image" content="http://example.com/images/thumbnail.jpg">
+  <meta name="twitter:image" content="http://example.comundefined">
   
-  <meta name="twitter:url" content="http://example.com/archives/" />
+  <meta name="twitter:url" content="http://example.com/2022/01/01/commit-case-sensitive-only-filename-changes-in-Git/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -181,112 +181,35 @@
 </div>
 
         <div class="trans">
-          
-<h2>All Posts</h2>
+            <h2>commit case-sensitive only filename changes in Git</h2>
+
+  <h3 id="How-do-I-commit-case-sensitive-only-filename-changes-in-Git"><a href="#How-do-I-commit-case-sensitive-only-filename-changes-in-Git" class="headerlink" title="How do I commit case-sensitive only filename changes in Git?"></a>How do I commit case-sensitive only filename changes in Git?</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/d/repo/MIT-6.0001-Introduction-to-Computer-Science-and-Programming-in-Python <span class="token punctuation">(</span>main<span class="token punctuation">)</span>
+$ <span class="token function">git</span> <span class="token function">mv</span> <span class="token environment constant">PS3</span> ps3
+Rename from <span class="token string">'PS3'</span> to <span class="token string">'ps3/PS3'</span> failed. Should I try again? <span class="token punctuation">(</span>y/n<span class="token punctuation">)</span> n
+fatal: renaming <span class="token string">'PS3'</span> failed: Permission denied
+
+/d/repo/MIT-6.0001-Introduction-to-Computer-Science-and-Programming-in-Python <span class="token punctuation">(</span>main<span class="token punctuation">)</span>
+$ <span class="token function">git</span> <span class="token function">mv</span> <span class="token environment constant">PS3</span> <span class="token function">ps</span>
+
+/d/repo/MIT-6.0001-Introduction-to-Computer-Science-and-Programming-in-Python <span class="token punctuation">(</span>main<span class="token punctuation">)</span>
+$ <span class="token function">git</span> <span class="token function">mv</span> <span class="token function">ps</span> ps3
+
+/d/repo/MIT-6.0001-Introduction-to-Computer-Science-and-Programming-in-Python <span class="token punctuation">(</span>main<span class="token punctuation">)</span>
+$ <span class="token function">git</span> status
+On branch main
+Your branch is ahead of <span class="token string">'origin/main'</span> by <span class="token number">1</span> commit.
+  <span class="token punctuation">(</span>use <span class="token string">"git push"</span> to publish your <span class="token builtin class-name">local</span> commits<span class="token punctuation">)</span>
+
+Changes to be committed:
+  <span class="token punctuation">(</span>use <span class="token string">"git restore --staged &lt;file>..."</span> to unstage<span class="token punctuation">)</span>
+        renamed:    <span class="token environment constant">PS3</span>/MIT6_0001F16_ProblemSet3.pdf -<span class="token operator">></span> ps3/MIT6_0001F16_ProblemSet3.pdf
+        renamed:    <span class="token environment constant">PS3</span>/ps3.py -<span class="token operator">></span> ps3/ps3.py
+        renamed:    <span class="token environment constant">PS3</span>/test_ps3.py -<span class="token operator">></span> ps3/test_ps3.py
+        renamed:    <span class="token environment constant">PS3</span>/words.txt -<span class="token operator">></span> ps3/words.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Jan 5, 2022</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/01/05/MIT-6-828-Operating-System-Engineering/" class="">
-            
-              MIT-6.828-Operating-System-Engineering
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Jan 5, 2022</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/01/05/MIT-6-0001-Introduction-to-Computer-Science-and-Programming-in-Python/" class="">
-            
-              MIT-6.0001-Introduction to Computer Science and Programming in Python
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Jan 5, 2022</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/01/05/MIT-6-NULL-The-Missing-Semester-of-Your-CS-Education/" class="">
-            
-              MIT-6.NULL-The-Missing-Semester-of-Your-CS-Education
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Jan 5, 2022</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/01/05/something-about-git/" class="">
-            
-              something about git
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Jan 5, 2022</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/01/05/something-about-gitpage/" class="">
-            
-              something about gitpage
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Jan 1, 2022</p>
-        </div>
-        <div class="nine columns left mb-3">
-          <a href="/2022/01/01/commit-case-sensitive-only-filename-changes-in-Git/" class="">
-            
-              commit case-sensitive only filename changes in Git
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
-<div class="pagination-bar">
-  <ul class="pagination">
-    
-    
-  </ul>
-</div>
+  <p> — Jan 1, 2022</p>
+  
 
 
           <div class="row mt-2">
