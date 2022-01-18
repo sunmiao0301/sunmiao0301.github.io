@@ -222,7 +222,23 @@ $ <span class="token function">git</span> push<span aria-hidden="true" class="li
 $ <span class="token function">git</span> commit -m <span class="token string">"push large file"</span>
 $ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="Done"><a href="#Done" class="headerlink" title="Done"></a>Done</h4>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h3 id="Force-to-push"><a href="#Force-to-push" class="headerlink" title="Force to push"></a>Force to push</h3><ul>
+<li><p>Imagine the following:</p>
+<p>You clone a repo that only you maintain from the github, and you modified the repo from web and your PC at the same time by accident, but the modification you did through web is meaningless, so you wanne git push your modification in your PC to remote repo (aka your github), in this case, you can:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> add./
+<span class="token function">git</span> commit -m <span class="token string">"a dangerous operation"</span>
+<span class="token function">git</span> push -f origin main <span class="token comment"># 'main' is the main branch's name in your repo</span>
+<span class="token comment"># if you still use git push, you will get:</span>
+<span class="token comment">#  ! [rejected]        master -> dev (fetch first)</span>
+<span class="token comment"># error: failed to push some refs to </span>
+<span class="token comment"># 'https://myusername@bitbucket.org/repo_user/repo_name.git'</span>
+<span class="token comment"># hint: Updates were rejected because the remote contains work that you do</span>
+<span class="token comment"># hint: not have locally. This is usually caused by another repository pushing</span>
+<span class="token comment"># hint: to the same ref. You may want to first integrate the remote changes</span>
+<span class="token comment"># hint: (e.g., 'git pull ...') before pushing again.</span>
+<span class="token comment"># hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+
   <p> — Jan 5, 2022</p>
   
 
